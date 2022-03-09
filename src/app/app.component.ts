@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'traduzindo-angular';
+
+  public TraduzirBrasil() {
+    alert('Aqui é Brasil');
+  }
+
+  public TraduzirUSA() {
+    alert('New York');
+  }
+
+
 }
