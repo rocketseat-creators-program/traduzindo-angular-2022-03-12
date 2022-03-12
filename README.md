@@ -5,26 +5,21 @@ Desenvolvemos Sistemas, Sites, Apps, etc... Que ficam disponíveis na Internet e
 
 Por isso nesse vídeo, vou mostrar como transformar seu site, feito no Brasil por brasileiros em um site Multi-idiomas que pode ser utilizado por pessoas que não conheçam o seu idioma. Mas ainda possam usar seu Site ou Sistema, sem ficar tentando adivinhar o que está escrito ou ficar traduzindo tudo o que não entender.
 
-```typescript
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { TranslateModule } from '@ngx-translate/core';
+# Agora vamos ao passo a passo para seguir o Vídeo
+## Vou deixar para vocês os mesmos comandos que usarei no Vídeo.
 
+### 1 - Baixando o Código
+```github
+git clone https://github.com/rocketseat-experts-club/traduzindo-angular-2022-03-12.git
+```
+Verifique que você está na Branch main
 
-import { AppComponent } from './app.component';
-
-
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    TranslateModule.forRoot()
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
-export class AppModule { }
-
+### 2 - Executando o projeto que será traduzido
+```node
+npm install
+ng s
+```
+Depois de executar os 2 comandos, acesso o caminho gerado pelo Angular. Normalmente é esse: 
+```html
+http://localhost:4200/
 ```
