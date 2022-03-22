@@ -8,11 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class ComboIdiomaNativoComponent implements OnInit {
 
   idiomas = [
-    "Português do Brasil",
-    "Inglês",
-    "Espanhol",
-    "Francês",
-    "Alemão"
+    "Language.Brazil",
+    "Language.English",
+    "Language.Spanish",
+    "Language.French",
+    "Language.German"
   ];
 
   constructor() { }

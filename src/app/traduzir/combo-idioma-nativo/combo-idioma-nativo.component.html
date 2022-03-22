@@ -1,9 +1,9 @@
 <div class="form-group">
-  <label for="idiomas" class="control-label">Qual é o seu Idioma Nativo?</label>
+  <label for="idiomas" class="control-label">{{'Language.TITLE' | translate}}</label>
     <select
       title="listaIdiomas"
       class="form-control"
       data-placeholder=""            >
-      <option *ngFor="let idioma of idiomas">{{ idioma }}</option>
+      <option *ngFor="let idioma of idiomas">{{ idioma | translate }}</option>
     </select>
 </div>

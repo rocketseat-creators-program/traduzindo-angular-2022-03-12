@@ -25,6 +25,14 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { TooltipComponent } from './traduzir/tooltip/tooltip.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+
+// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
@@ -51,7 +59,15 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     AlertModule,
     CarouselModule,
     TabsModule,
-    TooltipModule
+    TooltipModule,
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

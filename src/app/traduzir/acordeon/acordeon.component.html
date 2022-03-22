@@ -1,26 +1,21 @@
 <accordion [isAnimated]="true">
-  <accordion-group heading="O que é Angular">
+  <accordion-group heading="{{ 'Acordeon.Item1.Title' | translate}}">
     <article class="col-lg-12">
       <p>
-        Frameworks SPA atualmente são um padrão de mercado quando falamos sobre
-        desenvolvimento front-end. Neste artigo, vamos abordar um dos mais
-        populares frameworks JavaScript da atualidade: o
-        <strong>Angular</strong>.
+        {{ 'Acordeon.Item1.Text' | translate}}
+        <strong>{{ 'Acordeon.Item1.Bold' | translate}}</strong>.
       </p>
 
     </article>
   </accordion-group>
-  <accordion-group heading="O que é Bootstrap">
+  <accordion-group heading="{{ 'Acordeon.Item2.Title' | translate}}">
     <div class="cosmos-container cosmos-content">
       <p>
-        Quando vamos criar um site, precisamos tomar diversas decisões, como
-        qual banco de dados, linguagem e framework vamos usar, ou ainda onde
-        faremos o deploy da aplicação.
+        {{ 'Acordeon.Item2.Text' | translate}}
       </p>
     </div>
   </accordion-group>
-  <accordion-group heading="ngx-boostrap">
-    <p>Pacote i18n, que usaremos para traduzir nosso site em Angular.</p>
-    <p>Mais informações: Clique aqui</p>
+  <accordion-group heading="{{ 'Acordeon.Item3.Title' | translate}}">
+    <p>{{'Acordeon.Item3.Text' | translate}}</p>
   </accordion-group>
 </accordion>
