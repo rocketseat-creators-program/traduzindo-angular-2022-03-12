@@ -23,3 +23,64 @@ Depois de executar os 2 comandos, acesso o caminho gerado pelo Angular. Normalme
 ```html
 http://localhost:4200/
 ```
+### 3 - Criando a lista de Idiomas
+Vamos agora criar a lista de Idiomas, que será usada para traduzir o sistema. Aqui vou usar HTML simples, para diferenciar do Bootstrap e facilitar para vocês a inclusão ou alteração de idiomas mesmo que vocês não conheçam Bootstrap.
+
+No arquivo app.component.html incluir o código abaixo:
+```html
+<label><b>Escolha o Idioma do Site:</b>&nbsp;</label>
+<select  #listaIdiomas (change)="traduzirSite(listaIdiomas.value)" title="ListaIdiomas">
+  <option value="pt" selected="selected">Português do Brasil</option>
+  <option value="en">Inglês</option>  
+</select>
+```
+
+No arquivo app.component.ts incluir o código abaixo:
+```typescript
+traduzirSite(language: string): void {
+    alert(language);
+  }
+```
+
+### 4 - Instalando e configurando o pacote de Tradução
+Esses são os códigos usados no vídeo, para instalar e configurar a aplicação:
+
+```node
+npm install @ngx-translate/core@13.0.0
+```
+
+No arquivo src/app/app.module.ts incluir o código abaixo:
+```typescript
+  import { TranslateModule } from '@ngx-translate/core';
+  
+	imports
+		TranslateModule.forRoot()
+  }
+```
+
+```node
+npm install @ngx-translate/http-loader@6.0.0
+```
+
+No arquivo src/app/app.module.ts incluir o código abaixo:
+```typescript
+  import { HttpClientModule, HttpClient } from '@angular/common/http';
+	import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+	import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+	
+	// AoT requires an exported function for factories
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
+```
+
+No arquivo src/app/app.component.ts incluir o código abaixo:
+```typescript
+  constructor(private translate: TranslateService) {
+    translate.setDefaultLang('pt');
+  }
+  
+  traduzirSite(language: string): void {
+    this.translate.use(language);
+  }
+```
